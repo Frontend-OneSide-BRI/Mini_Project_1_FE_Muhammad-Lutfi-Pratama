@@ -1,0 +1,90 @@
+* {
+  font-family: "Poppins";
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #fdf7f2ee;
+}
+
+.my-logo {
+  width: 100px;
+  height: 100px;
+}
+
+.button-login:hover {
+  background-color: #c7c7c7;
+  outline: none;
+}
+
+.ms-n5 {
+  margin-left: -40px;
+}
+
+.nav-item a {
+  height: 50px;
+}
+
+.carousel,
+.item,
+.active {
+  height: 50vh;
+}
+.carousel-inner {
+  height: 50vh;
+}
+
+.carousel {
+  margin-bottom: 20px;
+}
+.carousel-caption {
+  z-index: 10;
+}
+.carousel .item {
+  background-color: #777;
+}
+
+.carousel-inner .carousel-item {
+  object-fit: none;
+}
+
+.img-gallery {
+  height: 200px;
+  width: 200px;
+}
+
+#img-robot:hover {
+  cursor: pointer;
+  transform: scale(1.15);
+  transition: 0.5s;
+  /* create title inside the image */
+  position: relative;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.img-container {
+  position: relative;
+}
+
+.img-title {
+  background-color: rgb(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: white;
+  width: 50%;
+  font-size: 25px;
+  padding: 15px 0;
+  text-align: center;
+  opacity: 0;
+  transition: 0.6s;
+}
+
+.img-container:hover .img-title {
+  /*becomes visible on hover*/
+  opacity: 1;
+}
