@@ -1,8 +1,8 @@
 const galleryMenu = document.querySelectorAll(".nav .nav-item a");
 
-function getImages(dummyData) {
+function renderImages(dataRender) {
   let imgColTag = "";
-  dummyData.forEach(data => {
+  dataRender.forEach(data => {
     imgColTag = imgColTag.concat(
       " ",
       `
@@ -21,14 +21,14 @@ function getImages(dummyData) {
   return imgColTag;
 }
 
-function getImagesByCategory(id, element) {
-  switch (id) {
+function renderImagesByCategory(tagId, element) {
+  switch (tagId) {
     case "content-robot":
       let robotFiltered = dummy.filter(data => data.category === "robot");
 
       element.innerHTML = `    
         <div class="row text-center mt-4">
-          ${getImages(robotFiltered)}
+          ${renderImages(robotFiltered)}
         </div>
       `;
       break;
@@ -37,7 +37,7 @@ function getImagesByCategory(id, element) {
 
       element.innerHTML = `    
         <div class="row text-center mt-4">
-          ${getImages(natureFiltered)}
+          ${renderImages(natureFiltered)}
         </div>
       `;
       break;
@@ -47,35 +47,40 @@ function getImagesByCategory(id, element) {
   }
 }
 
-function getImagesByName(name, element) {
+function reload() {
+  let tabContents = document.querySelectorAll(".tab-content .tab-pane");
+
+  tabContents[0].classList.add("active");
+  let activeTabContent = document.querySelectorAll(".tab-content .active");
+  renderImagesByCategory(activeTabContent[0].id, activeTabContent[0]);
+}
+
+function renderImagesByName(menuTags, valueSearch) {
+  let element = document.querySelector(".tab-content .tab-pane");
   let imagesNameFiltered = [];
 
   dummy.forEach(data => {
-    if (data.title.includes(name)) {
+    if (data.title.toLowerCase().includes(valueSearch)) {
       imagesNameFiltered.push(data);
     }
   });
 
+  menuTags.forEach(menu => {
+    menu.classList.add("d-none");
+  });
+
   element.innerHTML = `    
     <div class="row text-center mt-4">
-      ${getImages(imagesNameFiltered)}
+      ${renderImages(imagesNameFiltered)}
     </div>
   `;
 }
 
-function startingLoad() {
-  let activeStartMenu = document.querySelectorAll(".tab-content .active");
-  getImagesByCategory(activeStartMenu[0].id, activeStartMenu[0]);
-}
-
-startingLoad();
+reload();
 galleryMenu.forEach(menu => {
   menu.addEventListener("click", () => {
     let activeMenu = document.querySelectorAll(".tab-content .active");
-    // galleryMenu.forEach(menu => {
-    //   menu.classList.remove("active");
-    // });
-    getImagesByCategory(activeMenu[0].id, activeMenu[0]);
+    renderImagesByCategory(activeMenu[0].id, activeMenu[0]);
   });
 });
 
@@ -85,15 +90,19 @@ const mainSection = document.querySelector("#main-section");
 
 // get value from input search and send to function
 inputSearch.addEventListener("keyup", () => {
-  let value = inputSearch.value;
+  let valueSearch = inputSearch.value;
+  let menuTagElements = document.querySelectorAll(".nav-item .nav-link");
 
-  if (value !== "") {
+  renderImagesByName(menuTagElements, valueSearch);
+
+  if (valueSearch !== "") {
     carousel.classList.add("d-none");
   } else {
     carousel.classList.remove("d-none");
+    menuTagElements.forEach(menu => {
+      menu.classList.remove("d-none");
+    });
+    menuTagElements[0].classList.add("active");
+    reload();
   }
-
-  console.log(value);
-
-  // trigger refresh value
 });
