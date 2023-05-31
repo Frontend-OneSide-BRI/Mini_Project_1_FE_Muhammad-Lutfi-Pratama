@@ -22,35 +22,44 @@
   </head>
   <body>
     <nav class="container-fluid shadow-sm">
-      <div class="container d-flex justify-content-between">
-        <div class="d-flex w-25 align-items-center">
-          <p class="me-5 fs-6">Pricing</p>
-          <p class="me-5 fs-6">Enterprise</p>
+      <div
+        class="container d-flex flex-column align-items-center py-3 py-sm-2 flex-sm-row justify-content-sm-between"
+      >
+        <div
+          class="nav-main d-flex w-25 justify-content-around justify-content-sm-start"
+        >
+          <a href="#" class="me-sm-5">Home</a>
+          <a href="#" class="me-sm-5">Gallery</a>
         </div>
         <img src="./logo.png" alt="logo" class="my-logo" />
-        <div class="w-25 d-flex align-items-center justify-content-end">
+        <div
+          class="nav-auth w-25 d-flex justify-content-center align-items-center justify-content-sm-end"
+        >
           <button
-            class="py-2 px-3 me-2 rounded-3 button-login"
+            class="nav-button button-login py-2 px-3 me-2 rounded-3"
             data-bs-toggle="modal"
             data-bs-target="#loginModal"
             type="button"
           >
             Sign up
           </button>
-          <button class="py-2 px-3 rounded-3 bg-black" style="color: white">
+          <button
+            class="nav-button py-2 px-3 rounded-3 bg-black"
+            style="color: white"
+          >
             Sign In
           </button>
         </div>
       </div>
     </nav>
     <section class="container-fluid text-center py-5">
-      <h3 class="mb-3 fw-bold">Toward Imagination</h3>
+      <h3 class="main-title mb-3 fw-bold">Toward Imagination</h3>
       <div class="input-group w-50 mx-auto">
         <input
           class="form-control border-end-0 border rounded-pill"
           type="search"
-          value="search"
-          id="Explore your imagination..."
+          placeholder="Explore your imagination..."
+          id="input-search"
         />
         <span class="input-group-append">
           <button
@@ -157,8 +166,9 @@
             src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/158072/spiderweb.jpg"
             class="d-block w-100"
             alt="..."
+            f
           />
-          <div class="carousel-caption d-none d-md-block pb-5">
+          <div class="carousel-caption d-md-block pb-5">
             <h5 class="fs-2 fw-bolder">Authentic Photos for Everyone</h5>
           </div>
         </div>
@@ -168,7 +178,7 @@
             class="d-block w-100"
             alt="..."
           />
-          <div class="carousel-caption d-none d-md-block pb-5">
+          <div class="carousel-caption d-md-block pb-5">
             <h5 class="fs-2 fw-bolder">Everyone Have to Exist</h5>
           </div>
         </div>
@@ -178,7 +188,7 @@
             class="d-block w-100"
             alt="..."
           />
-          <div class="carousel-caption d-none d-md-block pb-5">
+          <div class="carousel-caption d-md-block pb-5">
             <h5 class="fs-2 fw-bolder">Curated For You</h5>
           </div>
         </div>
@@ -210,7 +220,7 @@
     </div> -->
 
     <!-- Tabs navs -->
-    <div class="container">
+    <div id="main-section" class="container">
       <ul
         class="nav nav-tabs mb-3 d-flex justify-content-around"
         id="ex-with-icons"
@@ -268,7 +278,7 @@
     <!-- Tabs navs -->
     <!-- create navbar menus for image category -->
 
-    <div class="row text-center mt-4">
+    <!-- <div class="row text-center mt-4">
       <div class="col-lg-3 img-container">
         <img
           class="img-gallery shadow-lg rounded-4"
@@ -278,29 +288,9 @@
         />
         <div class="img-title rounded-4">Robot 1</div>
       </div>
-      <div class="col-lg-3">
-        <img
-          class="img-gallery shadow-lg rounded-2"
-          src="https://robohash.org/2/.png"
-          alt=""
-        />
-      </div>
-      <div class="col-lg-3">
-        <img
-          class="img-gallery shadow-lg"
-          src="https://robohash.org/3/.png"
-          alt=""
-        />
-      </div>
-      <div class="col-lg-3">
-        <img
-          class="img-gallery shadow-lg"
-          src="https://robohash.org/4/.png"
-          alt=""
-        />
-      </div>
-    </div>
+    </div> -->
 
+    <script src="./dummy.js"></script>
     <script src="./home.js"></script>
     <script
       type="text/javascript"
