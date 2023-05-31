@@ -49,6 +49,30 @@ const dummy = [
     img: "https://source.unsplash.com/random/900x900?forest",
     category: "nature",
   },
+  {
+    id: 9,
+    title: "Human 1",
+    img: "https://source.unsplash.com/random/900x900?face-female",
+    category: "human",
+  },
+  {
+    id: 10,
+    title: "Human 2",
+    img: "https://source.unsplash.com/random/900x900?face-male",
+    category: "human",
+  },
+  {
+    id: 11,
+    title: "Human 3",
+    img: "https://source.unsplash.com/random/900x900?face-baby",
+    category: "human",
+  },
+  {
+    id: 12,
+    title: "Human 4",
+    img: "https://source.unsplash.com/random/900x900?face-old",
+    category: "human",
+  },
 ];
 
 const galleryDummyData = [];

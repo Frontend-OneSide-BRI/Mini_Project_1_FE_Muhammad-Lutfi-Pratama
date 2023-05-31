@@ -11,7 +11,10 @@ function renderImages(dataRender) {
           <img
             class="img-gallery shadow-lg rounded-4"
             id="img-robot"
+            alt="${data.title}"
             src=${data.img}
+            data-bs-toggle="modal" 
+            data-bs-target="#imgModal"
           />
           <div class="img-title rounded-4">${data.title}</div>
         </div>
@@ -20,6 +23,25 @@ function renderImages(dataRender) {
   });
 
   return imgColTag;
+}
+
+function showModalDetailImage() {
+  const imgGallery = document.querySelectorAll(".img-gallery");
+  imgGallery.forEach(img => {
+    img.addEventListener("click", () => {
+      let imgSrc = img.getAttribute("src");
+      let imgTitle = img.getAttribute("alt");
+
+      let modalBody = document.querySelector(".modal-img-picked");
+
+      modalBody.innerHTML = `
+        <img src=${imgSrc} class="img-fluid" />
+      `;
+
+      let modalTitle = document.querySelector(".modal-titleImg-picked");
+      modalTitle.innerHTML = imgTitle;
+    });
+  });
 }
 
 function renderImagesByCategory(category, dummyData) {
@@ -34,8 +56,6 @@ function renderImagesByCategory(category, dummyData) {
       }
     });
   }
-
-  console.log("🚀 ~ imagesFiltered:", imagesFiltered);
 
   let getContent;
   switch (category) {
@@ -57,16 +77,12 @@ function renderImagesByCategory(category, dummyData) {
   }
 
   getContent.innerHTML = `
-      <div class="row text-center mt-4">
+      <div class="row text-center mt-4 pb-5">
         ${renderImages(imagesFiltered)}
       </div>
   `;
 
-  // element.innerHTML = `
-  //   <div class="row text-center mt-4">
-  //     ${renderImages(imagesFiltered)}
-  //   </div>
-  // `;
+  showModalDetailImage();
 }
 
 renderImagesByCategory("all", galleryDummyData);

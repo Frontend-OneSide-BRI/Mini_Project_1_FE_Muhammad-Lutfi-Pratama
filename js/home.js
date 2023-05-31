@@ -24,32 +24,7 @@ function renderImages(dataRender) {
   return imgColTag;
 }
 
-function renderImagesByCategory(tagId, element) {
-  switch (tagId) {
-    case "content-robot":
-      let robotFiltered = dummy.filter(data => data.category === "robot");
-
-      element.innerHTML = `    
-        <div class="row text-center mt-4">
-          ${renderImages(robotFiltered)}
-        </div>
-      `;
-
-      break;
-    case "content-nature":
-      let natureFiltered = dummy.filter(data => data.category === "nature");
-
-      element.innerHTML = `    
-        <div class="row text-center mt-4">
-          ${renderImages(natureFiltered)}
-        </div>
-      `;
-      break;
-
-    default:
-      break;
-  }
-
+function showModalDetailImage() {
   const imgGallery = document.querySelectorAll(".img-gallery");
   imgGallery.forEach(img => {
     img.addEventListener("click", () => {
@@ -66,6 +41,44 @@ function renderImagesByCategory(tagId, element) {
       modalTitle.innerHTML = imgTitle;
     });
   });
+}
+
+function renderImagesByCategory(tagId, element) {
+  switch (tagId) {
+    case "content-robot":
+      let robotFiltered = dummy.filter(data => data.category === "robot");
+
+      element.innerHTML = `    
+        <div class="row text-center mt-4 pb-5">
+          ${renderImages(robotFiltered)}
+        </div>
+      `;
+
+      break;
+    case "content-nature":
+      let natureFiltered = dummy.filter(data => data.category === "nature");
+
+      element.innerHTML = `    
+        <div class="row text-center mt-4 pb-5">
+          ${renderImages(natureFiltered)}
+        </div>
+      `;
+      break;
+    case "content-human":
+      let humanFiltered = dummy.filter(data => data.category === "human");
+
+      element.innerHTML = `    
+        <div class="row text-center mt-4 pb-5">
+          ${renderImages(humanFiltered)}
+        </div>
+      `;
+      break;
+
+    default:
+      break;
+  }
+
+  showModalDetailImage();
 }
 
 function reload() {
@@ -95,6 +108,8 @@ function renderImagesByName(menuTags, valueSearch) {
       ${renderImages(imagesNameFiltered)}
     </div>
   `;
+
+  showModalDetailImage();
 }
 
 reload();
