@@ -40,7 +40,7 @@
           <button
             class="nav-button button-login py-2 px-3 me-2 rounded-3"
             data-bs-toggle="modal"
-            data-bs-target="#loginModal"
+            data-bs-target="#authModal"
             type="button"
           >
             Sign up
@@ -48,6 +48,9 @@
           <button
             class="nav-button py-2 px-3 rounded-3 bg-black"
             style="color: white"
+            data-bs-toggle="modal"
+            data-bs-target="#authModal"
+            type="button"
           >
             Sign In
           </button>
@@ -57,6 +60,70 @@
     <header class="container text-center mt-5 mb-4">
       <h1 class="fw-bolder">GaLerry For You</h1>
     </header>
+
+    <!-- Modal -->
+    <section
+      class="modal fade"
+      id="authModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">
+              Auth
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label mb-2 mt-3"
+                  >Your name</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Type your name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label mb-2 mt-3"
+                  >Your email</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  placeholder="example@site.com"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary bg-white border-0"
+              style="color: #000"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-dark">Ok</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="container">
       <ul class="nav nav-pills" role="tablist">
@@ -105,6 +172,14 @@
         <div class="tab-pane container fade" id="human-category-content"></div>
       </div>
     </section>
+
+    <footer class="footer-gallery bg-dark py-2">
+      <div class="container text-center">
+        <p class="footer-text text-muted mb-0 py-2">
+          © 2023 GaLerry For Imagination - Muhammad Lutfi Pratama.
+        </p>
+      </div>
+    </footer>
 
     <script src="./js/dummy.js"></script>
     <script src="./js/gallery.js"></script>

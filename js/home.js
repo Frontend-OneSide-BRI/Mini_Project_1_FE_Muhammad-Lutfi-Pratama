@@ -10,7 +10,10 @@ function renderImages(dataRender) {
           <img
             class="img-gallery shadow-lg rounded-4"
             id="img-robot"
+            alt="${data.title}"
             src=${data.img}
+            data-bs-toggle="modal" 
+            data-bs-target="#imgModal"
           />
           <div class="img-title rounded-4">${data.title}</div>
         </div>
@@ -31,6 +34,7 @@ function renderImagesByCategory(tagId, element) {
           ${renderImages(robotFiltered)}
         </div>
       `;
+
       break;
     case "content-nature":
       let natureFiltered = dummy.filter(data => data.category === "nature");
@@ -45,6 +49,23 @@ function renderImagesByCategory(tagId, element) {
     default:
       break;
   }
+
+  const imgGallery = document.querySelectorAll(".img-gallery");
+  imgGallery.forEach(img => {
+    img.addEventListener("click", () => {
+      let imgSrc = img.getAttribute("src");
+      let imgTitle = img.getAttribute("alt");
+
+      let modalBody = document.querySelector(".modal-img-picked");
+
+      modalBody.innerHTML = `
+        <img src=${imgSrc} class="img-fluid" />
+      `;
+
+      let modalTitle = document.querySelector(".modal-titleImg-picked");
+      modalTitle.innerHTML = imgTitle;
+    });
+  });
 }
 
 function reload() {
@@ -80,7 +101,7 @@ reload();
 galleryMenu.forEach(menu => {
   menu.addEventListener("click", () => {
     let activeContentMenu = document.querySelectorAll(".tab-content .tab-pane");
-    // !fdf
+
     activeContentMenu.forEach(menuContent => {
       menuContent.innerHTML = "";
       if (menuContent.classList.contains("active")) {
