@@ -155,7 +155,7 @@ footer {
     font-size: 16px;
   }
 
-  .tab-pane {
+  .tab-pane.tab-pane-home {
     display: inline !important;
   }
 

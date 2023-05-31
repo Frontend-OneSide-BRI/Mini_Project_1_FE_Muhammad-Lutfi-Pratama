@@ -21,15 +21,15 @@
     <link rel="stylesheet" href="./style/main.css" />
   </head>
   <body>
-    <nav class="container-fluid shadow-sm">
+    <nav class="container-fluid shadow-lg rounded-5">
       <div
         class="container d-flex flex-column align-items-center py-3 py-sm-2 flex-sm-row justify-content-sm-between"
       >
         <div
           class="nav-main d-flex w-25 justify-content-around justify-content-sm-start"
         >
-          <a href="#" class="me-sm-5">Home</a>
-          <a href="#" class="me-sm-5">Gallery</a>
+          <a href="./home.html" class="me-sm-5">Home</a>
+          <a href="./gallery.html" class="me-sm-5">Gallery</a>
         </div>
         <img src="./assets/logo.png" alt="logo" class="my-logo" />
         <div
@@ -84,7 +84,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">
-              Login
+              Sign Up
             </h1>
             <button
               type="button"
@@ -213,14 +213,12 @@
       </button>
     </div>
 
-    <!-- Category Gallery -->
-    <!-- <div class="gallery-menu container d-flex justify-content-around">
-      <a class="menu-robot active" href="#">Robot</a>
-      <a class="menu-nature" href="#">Nature</a>
-    </div> -->
-
     <!-- Tabs navs -->
-    <div id="main-section" class="container">
+    <section class="container text-center py-3">
+      <h3 class="fw-bold pt-4">Curated For You</h3>
+    </section>
+
+    <section id="main-section" class="container">
       <ul
         class="nav nav-tabs mb-3 d-flex justify-content-around"
         id="ex-with-icons"
@@ -255,7 +253,7 @@
       <!-- Tabs content -->
       <div class="tab-content" id="ex-with-icons-content">
         <div
-          class="tab-pane fade show"
+          class="tab-pane tab-pane-home fade show"
           id="content-robot"
           role="tabpanel"
           aria-labelledby="ex-with-icons-tab-1"
@@ -263,7 +261,7 @@
           Tab 1 content
         </div>
         <div
-          class="tab-pane fade"
+          class="tab-pane tab-pane-home fade"
           id="content-nature"
           role="tabpanel"
           aria-labelledby="ex-with-icons-tab-2"
@@ -271,7 +269,7 @@
           Tab 2 content
         </div>
       </div>
-    </div>
+    </section>
 
     <footer class="bg-dark py-3">
       <div class="container text-center">
@@ -281,8 +279,8 @@
       </div>
     </footer>
 
-    <script src="./dummy.js"></script>
-    <script src="./home.js"></script>
+    <script src="./js/dummy.js"></script>
+    <script src="./js/home.js"></script>
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.js"

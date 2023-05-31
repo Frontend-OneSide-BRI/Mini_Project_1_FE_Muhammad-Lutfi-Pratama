@@ -1,12 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GaLerry-Galeri</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GaLerry-Galeri</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="./style/gallery.css" />
+  </head>
+  <body>
+    <nav class="container-fluid shadow-lg rounded-5">
+      <div
+        class="container d-flex flex-column align-items-center py-3 py-sm-2 flex-sm-row justify-content-sm-between"
+      >
+        <div
+          class="nav-main d-flex w-25 justify-content-around justify-content-sm-start"
+        >
+          <a href="./home.html" class="me-sm-5">Home</a>
+          <a href="./gallery.html" class="me-sm-5">Gallery</a>
+        </div>
+        <img src="./assets/logo.png" alt="logo" class="my-logo" />
+        <div
+          class="nav-auth w-25 d-flex justify-content-center align-items-center justify-content-sm-end"
+        >
+          <button
+            class="nav-button button-login py-2 px-3 me-2 rounded-3"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+            type="button"
+          >
+            Sign up
+          </button>
+          <button
+            class="nav-button py-2 px-3 rounded-3 bg-black"
+            style="color: white"
+          >
+            Sign In
+          </button>
+        </div>
+      </div>
+    </nav>
+    <header class="container text-center mt-5 mb-4">
+      <h1 class="fw-bolder">GaLerry For You</h1>
+    </header>
+
+    <section class="container">
+      <ul class="nav nav-pills" role="tablist">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            data-bs-toggle="pill"
+            href="#all-category-content"
+            id="all"
+            >All</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            data-bs-toggle="pill"
+            id="robot"
+            href="#robot-category-content"
+            >Robot</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            data-bs-toggle="pill"
+            href="#nature-category-content"
+            id="nature"
+            >Nature</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            data-bs-toggle="pill"
+            href="#human-category-content"
+            id="human"
+            >Human</a
+          >
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane container active" id="all-category-content"></div>
+        <div class="tab-pane container fade" id="robot-category-content"></div>
+        <div class="tab-pane container fade" id="nature-category-content"></div>
+        <div class="tab-pane container fade" id="human-category-content"></div>
+      </div>
+    </section>
+
+    <script src="./js/dummy.js"></script>
+    <script src="./js/gallery.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

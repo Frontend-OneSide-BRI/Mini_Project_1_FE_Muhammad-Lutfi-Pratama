@@ -79,8 +79,14 @@ function renderImagesByName(menuTags, valueSearch) {
 reload();
 galleryMenu.forEach(menu => {
   menu.addEventListener("click", () => {
-    let activeMenu = document.querySelectorAll(".tab-content .active");
-    renderImagesByCategory(activeMenu[0].id, activeMenu[0]);
+    let activeContentMenu = document.querySelectorAll(".tab-content .tab-pane");
+    // !fdf
+    activeContentMenu.forEach(menuContent => {
+      menuContent.innerHTML = "";
+      if (menuContent.classList.contains("active")) {
+        renderImagesByCategory(menuContent.id, menuContent);
+      }
+    });
   });
 });
 
@@ -90,7 +96,7 @@ const mainSection = document.querySelector("#main-section");
 
 // get value from input search and send to function
 inputSearch.addEventListener("keyup", () => {
-  let valueSearch = inputSearch.value;
+  let valueSearch = inputSearch.value.toLowerCase();
   let menuTagElements = document.querySelectorAll(".nav-item .nav-link");
 
   renderImagesByName(menuTagElements, valueSearch);
