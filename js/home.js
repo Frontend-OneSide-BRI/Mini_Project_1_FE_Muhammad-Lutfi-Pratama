@@ -148,3 +148,8 @@ inputSearch.addEventListener("keyup", () => {
     reload();
   }
 });
+
+const myLogo = document.querySelector(".my-logo");
+myLogo.addEventListener("click", () => {
+  window.location.reload();
+});

@@ -91,3 +91,8 @@ tabs.forEach(tab => {
     renderImagesByCategory(e.target.id, galleryDummyData);
   });
 });
+
+const myLogo = document.querySelector(".my-logo");
+myLogo.addEventListener("click", () => {
+  window.location.reload();
+});
