@@ -51,6 +51,53 @@ a {
   font-size: 1.14rem;
 }
 
+.nav-active {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.parallax-carousel-one {
+  padding-top: 200px;
+  padding-bottom: 400px;
+  overflow: hidden;
+  width: 100%;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/158072/spiderweb.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.parallax-carousel-two {
+  padding-top: 200px;
+  padding-bottom: 400px;
+  overflow: hidden;
+  width: 100%;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/158072/hearthand.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.parallax-carousel-three {
+  padding-top: 200px;
+  padding-bottom: 400px;
+  overflow: hidden;
+  width: 100%;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/158072/woman-camera.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .carousel,
 .item,
 .active {
